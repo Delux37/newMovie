@@ -1,30 +1,55 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <!-- <div class="container" v-for="movie in movies" :key="movie">
+      <div class="movieContainer">
+        {{movie.title}}
+        <div class="imgContainer"> 
+          <img :src="baseUrl + movie.poster_path"/>
+        </div>
+      </div>
+    </div> -->
+    <!-- <img :src="imgSrc" alt="netflix"/> -->
+    <router-view/>
   </div>
-  <router-view/>
 </template>
 
+<script>
+// import axios from 'axios'
+// export default {
+//   data() {
+//     return { 
+//       baseUrl: 'https://image.tmdb.org/t/p/w500/',
+//       movies: [],
+//       imgSrc: 'https://image.tmdb.org/t/p/w500/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg'
+//     }
+//   },
+//   mounted() {
+//       axios.get('https://api.themoviedb.org/3/movie/upcoming?api_key=965927be031c047f8d9a7fddfe8f08bc&language=en-US&page=1')
+//       .then((response) => {
+//         this.movies = response.data.results
+//         console.log(this.movies)
+//     });
+//   }
+// }
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
-
-#nav {
-  padding: 30px;
+/* .container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.imgContainer{
+  flex-direction: row;
+  width: 200px;
+  border: 2px solid red;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+.imgContainer > img{
+  width: 100%;
+} */
 </style>
